@@ -1,0 +1,20 @@
+{
+  "name": "IT用語検索",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "IT用語忘れちゃうよね",
+  "icons": {
+    "16": "images/icon_16.png",
+    "128": "images/icon_128.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "images/icon_16.png",
+    "default_title": "IT用語検索",
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "http://e-words.jp/",
+    "https://www.google.co.jp/"
+  ]
+}

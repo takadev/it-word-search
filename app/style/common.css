@@ -1,0 +1,30 @@
+body {
+	min-width: 350px;
+}
+
+h1 {
+	font-size: 1.2em;
+}
+
+ul {
+	padding-left: 5px;
+}
+
+ul li {
+	list-style: none;
+}
+
+input[type=text].form-control {
+	width: 85%;
+	margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+span.icon-search {
+	font-size: 200%;
+	vertical-align: middle;
+}
+
+div#main {
+	text-align: center;
+}
