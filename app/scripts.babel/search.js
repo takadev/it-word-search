@@ -3,6 +3,7 @@ import $ from 'jquery';
 const IT_WORD_URL = 'http://e-words.jp/w/';
 const GOOGLE_SEARCH_URL = 'https://www.google.co.jp/search?q=';
 const GOOGLE_RESULT_NUM = 8;
+let _url = "";
 
 $(function(){
 	init();
@@ -26,8 +27,9 @@ function search()
 	if (!text) {
 		return false;
 	}
+	_url = IT_WORD_URL + text + '.html'
 	$.ajax({
-		url: IT_WORD_URL + text + '.html',
+		url: _url,
 		type: 'GET',
 		statusCode:{
 				404:function() {
@@ -74,6 +76,7 @@ function disp(data)
 		$(this).attr('target', '_blank');
 	});
 	$('#content').empty().append(sum.innerHTML);
+	$('#content').append('<div><a href=' + _url + ' target="_blank">詳しく</a></div>');
 }
 
 function empty()
