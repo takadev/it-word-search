@@ -13,7 +13,7 @@ function init() {
 		search();
 	});
 
-	$('.form-control').keypress( function ( e ) {
+	$('.form-control').keypress(function(e) {
 		if (e.which == 13) {
 			search();
 		}
@@ -23,6 +23,9 @@ function init() {
 function search()
 {
 	var text = $.trim($('.form-control').val());
+	if (!text) {
+		return false;
+	}
 	$.ajax({
 		url: IT_WORD_URL + text + '.html',
 		type: 'GET',
