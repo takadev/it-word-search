@@ -5,6 +5,7 @@
   "description": "IT用語忘れちゃうよね",
   "icons": {
     "16": "images/icon_16.png",
+    "19": "images/icon_19.png",
     "128": "images/icon_128.png"
   },
   "default_locale": "en",
@@ -13,8 +14,21 @@
     "default_title": "IT用語検索",
     "default_popup": "html/popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*" ],
+      "css": ["style/contents.css"],
+      "js": ["scripts/script.js"]
+    }
+  ],
   "permissions": [
-    "http://e-words.jp/",
-    "https://www.google.co.jp/"
+    "activeTab",
+    "background",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "images/icon_16.png"
   ]
 }
