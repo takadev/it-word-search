@@ -27,6 +27,7 @@ $(function() {
 		if (!select_text)
 		{
 			result.hide();
+			$(it_search).delay(1000).hide();
 			return false;
 		}
 		tmp_text = select_text;
