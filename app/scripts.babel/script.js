@@ -27,7 +27,6 @@ $(function() {
 		if (!select_text)
 		{
 			result.hide();
-			$(it_search).delay(1000).hide();
 			return false;
 		}
 		tmp_text = select_text;
@@ -47,7 +46,8 @@ $(function() {
 
 function init()
 {
-	$('body').mousemove(function(e){
+	var body = $('body');
+	body.mousemove(function(e){
 		mX = e.pageX;
 		mY = e.pageY;
 	});
@@ -67,6 +67,12 @@ function init()
 	title = $('#it-search-title');
 	content = $('#it-search-content');
 
+	body.click(function(){
+		if (!select_text)
+		{
+			it_search.hide();
+		}
+	})
 	it_search_icon.css({
 		'background-image': 'url("' + chrome.extension.getURL("images/icon_16.png") + '")'
 	});
